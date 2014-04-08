@@ -1,11 +1,6 @@
 ﻿Public Class frm_principal2
 
     Private Sub frm_principal2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'TODO: esta línea de código carga datos en la tabla 'KardexDataSet.INVENTARIO_DETALLE' Puede moverla o quitarla según sea necesario.
-        'Me.INVENTARIO_DETALLETableAdapter.Fill(Me.KardexDataSet.INVENTARIO_DETALLE)
-        'TODO: esta línea de código carga datos en la tabla 'KardexDataSet.INVENTARIO_HEADER' Puede moverla o quitarla según sea necesario.
-        'Me.INVENTARIO_HEADERTableAdapter.Fill(Me.KardexDataSet.INVENTARIO_HEADER)
-
         'cerramos la pantalla de bienvenida
         frm_presentacion.Close()
 
@@ -18,7 +13,7 @@
         Me.Close()
     End Sub
 
-    Private Sub SimpleButton_remover_Click(sender As Object, e As EventArgs) Handles SimpleButton_remover.Click
+    Private Sub SimpleButton_remover_Click(sender As Object, e As EventArgs)
         'solo si hay mas de una linea en el datagridview, procedemos a eliminarla
         If Me.DataGridView_kardex.Rows.Count > 1 Then
             'indicamos que linea eliminar por medio del indice seleccionado
@@ -27,7 +22,6 @@
     End Sub
 
     Private Sub BarButtonItem_guardar_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem_guardar.ItemClick
-
         '---------------------------------------------------
         'Header del inventario
         '---------------------------------------------------
@@ -74,18 +68,16 @@
         End If
     End Sub
 
-    Private Sub DataGridView_kardex_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView_kardex.CellContentClick
+    Private Sub DataGridView_kardex_CellContentClick(sender As Object, e As DataGridViewCellEventArgs)
 
     End Sub
 
-    Private Sub SimpleButton_adicionar_Click(sender As Object, e As EventArgs) Handles SimpleButton_adicionar.Click
+    Private Sub SimpleButton_adicionar_Click(sender As Object, e As EventArgs)
         'agregamos una linea en el datagridview de detalle del inventario
         Me.DataGridView_kardex.Rows.Add()
     End Sub
 
     Private Sub BarButtonItem_buscar_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem_buscar.ItemClick
-
         frm_buscar_inventario.Show()
-
     End Sub
 End Class
